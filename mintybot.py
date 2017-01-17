@@ -40,7 +40,7 @@ while 1:
         if "**fin" in text:
             codefile.close()
             os.system("gcc \"" + os.getcwd() + "/code.c\" &> gcc_output.txt")
-            os.system("\"" + os.getcwd() + "\/a.out\" > program_output.txt")
+            os.system("\"" + os.getcwd() + "/a.out\" > program_output.txt")
             time.sleep(2)
             os.system('pkill ' + 'a.out')
 

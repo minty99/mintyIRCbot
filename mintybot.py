@@ -86,7 +86,7 @@ while 1:
         if aheui_flag and "**힣" not in text and text[:(text.find("!"))] == aheui_commander:
             aheuifile.write(msg)
             
-        if "**힣" in text and aheui_flag is True and gcc_flag is False and  text[:(text.find("!"))] == aheui_commander:
+        if "**힣" in text and aheui_flag is True and  text[:(text.find("!"))] == aheui_commander:
             aheuifile.close()
             cwd = os.getcwd()
             os.system(cwd + "/aheui " + cwd + "aheuitemp > aheui_output.txt")

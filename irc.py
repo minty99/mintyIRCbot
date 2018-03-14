@@ -27,9 +27,11 @@ class IRC:
         except ConnectionResetError as e: pass
 
     def send(self, chan, msg):
-        self.irc.send(bytes("PRIVMSG " + chan + " :" + msg + "\n", "UTF-8"))
-        print("SENT: " + "PRIVMSG " + chan + " :" + msg + "\n")
+        cmd = "PRIVMSG " + chan + " :" + msg + "\n"
+        self.irc.send(bytes(cmd, "UTF-8"))
+        print("SENT: " + cmd, end="")
 
-    def send_cmd(self, chan, msg):
-        self.irc.send(bytes(msg + "\n", "UTF-8"))
-        print("SENT: " + msg)
+    def give_op(self, chan, user):
+        cmd = "MODE " + chan + " +o " + user + "\n"
+        self.irc.send(bytes(cmd, "UTF-8"))
+        print("SENT: " + cmd, end="")
